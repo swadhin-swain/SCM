@@ -4,14 +4,14 @@ package com.scm.helper;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class Helper {
 
     public static String getEmailOfLoggedInUser(Authentication authentication) {
 
         
-
         // agar email id password se login kiya hai toh : email kaise nikalenge
 
         if(authentication instanceof OAuth2AuthenticationToken) {
@@ -47,7 +47,13 @@ public class Helper {
             return authentication.getName();
         }
        
+    }
 
-       
+
+    public static String getLinkForEmailVerification(String emailToken) {
+
+        String link = "http://localhost:8080/auth/verify-email?token=" +emailToken;
+
+        return link;
     }
 }

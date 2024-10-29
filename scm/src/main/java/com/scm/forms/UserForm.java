@@ -1,6 +1,7 @@
 package com.scm.forms;
 
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -19,7 +20,7 @@ public class UserForm {
     @Size(min = 3,message = "Min 3 characters required")
     private String name;
 
-    @Pattern(regexp = "[a-zA-Z0-9][a-zA-Z0-9_.]*@gmail[.]com", message = "Invalid email")
+     @Email(message = "Invalid Email Address [example@gmail.com]")
     private String email;
 
     @NotBlank(message = "password required")

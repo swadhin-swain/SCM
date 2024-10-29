@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile detail</title>
+</head>
+<body>
+    <h1> Name : <span data-th-text="${contact.name}"></span></h1>
+    <h1> Email : <span data-th-text="${contact.email}"></span></h1>
+    <h1> Phone Number : <span data-th-text="${contact.phoneNumber}"></span></h1>
+    <h1> Address : <span data-th-text="${contact.address}"></span></h1>
+    <h1> Description : <span data-th-text="${contact.description}"></span></h1>
+    <br>
+    <a data-th-href="@{'/user/contact'}">Go To Contact Page</a>
+</body>
+</html>
